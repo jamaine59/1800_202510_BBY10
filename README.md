@@ -58,7 +58,7 @@ project-name/
 ---
 
 ## Contributors
--**Ibrahim Abudalah** - CST student with a passion for coding
+- **Ibrahim Abudalah** - CST student with a passion for coding
 - **Brad Muirhead** - Fresh to coding and looking to learn the ropes
 - **Jamaine** - reading fantasy books
 - **Teammate Name** - BCIT CST Student, Frontend enthusiast with a knack for creative design. Fun fact: Has a collection of over 50 houseplants.
