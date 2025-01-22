@@ -58,7 +58,12 @@ project-name/
 ---
 
 ## Contributors
-- Brad Muirhead - Bresh BCIT student with no background in coding looking to learn the ropes.
+
+- Brad Muirhead - Fresh BCIT student with no background in coding looking to learn the ropes.
+
+
+- **Ibrahim** - CST student with a passion for coding
+- **Teammate Name** - BCIT CST Student, Frontend enthusiast with a knack for creative design. Fun fact: Has a collection of over 50 houseplants.
 
 
 ---
