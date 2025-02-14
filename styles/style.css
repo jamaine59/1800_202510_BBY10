@@ -5,3 +5,12 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+.navbar {
+  background-color: #21b034;
+}
+
+.nav__logo {
+  height: 55px;
+  width: 55px;
+}
