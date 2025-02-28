@@ -1,0 +1,16 @@
+body {
+  background-color: #2cd543;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.nav-tabs .nav-link:focus,
+.nav-tabs .nav-link.active:focus,
+.nav-tabs .nav-link:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
