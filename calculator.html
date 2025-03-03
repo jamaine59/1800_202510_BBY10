@@ -58,6 +58,135 @@
             </div>
         </div>
     </nav>
+
+    <!-- Calculator Form -->
+    <main class="pt-5">
+        <h1 class="header">The Calorie Calculator can be used to estimate the number of calories a person needs to consume each day.
+            This
+            calculator can also provide some simple guidelines for gaining or losing weight.</h1>
+
+        <div class="container mt-4 w-75">
+            <!-- Navigation Tabs -->
+            <ul class="nav nav-tabs" id="unitTabs" role="tablist">
+                <li class="nav-item">
+                    <button class="nav-link active" id="imperial-tab" data-bs-toggle="tab" data-bs-target="#imperial"
+                        type="button" role="tab">Imperial</button>
+                </li>
+                <li class="nav-item">
+                    <button class="nav-link" id="metric-tab" data-bs-toggle="tab" data-bs-target="#metric" type="button"
+                        role="tab">Metric</button>
+                </li>
+            </ul>
+
+            <!-- Tab Content -->
+            <div class="tab-content mt-3">
+                <!-- Imperial Form -->
+                <div class="tab-pane fade show active" id="imperial" role="tabpanel">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Gender:</label>
+                            <div class="d-flex gap-5 radio">
+                                <div>
+                                    <input class="form-check-input" type="radio" name="gender" value="male" checked />
+                                    <label for="">Male</label>
+                                </div>
+                                <div>
+                                    <input class="form-check-input" type="radio" name="gender" value="female" />
+                                    <label for="">Female</label>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Age:</label>
+                            <input type="number" placeholder="25" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Weight (lbs):</label>
+                            <input type="number" placeholder="160" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Height:</label>
+                            <select class="form-control">
+                                <option>5ft 0in</option>
+                                <option>5ft 1in</option>
+                                <option>5ft 2in</option>
+                                <option>5ft 3in</option>
+                                <option>5ft 4in</option>
+                                <option>5ft 5in</option>
+                                <option>5ft 6in</option>
+                                <option>5ft 7in</option>
+                                <option>5ft 8in</option>
+                                <option>5ft 9in</option>
+                                <option>5ft 10in</option>
+                                <option>5ft 11in</option>
+                                <option>6ft 0in</option>
+                                <option>6ft 1in</option>
+                                <option>6ft 2in</option>
+                                <option>6ft 3in</option>
+                                <option>6ft 4in</option>
+                                <option>6ft 5in</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Activity Level:</label>
+                            <select class="form-control">
+                                <option>Sedentary (office job)</option>
+                                <option>Light Exercise (1-2 days/week)</option>
+                                <option>Moderate Exercise (3-5 days/week)</option>
+                                <option>Heavy Exercise (6-7 days/week)</option>
+                                <option>Athlete (2x per day)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate</button>
+                    </form>
+                </div>
+
+                <!-- Metric Form -->
+                <div class="tab-pane fade" id="metric" role="tabpanel">
+                    <form>
+                        <div class="mb-3">
+                            <label class="form-label">Gender:</label>
+                            <div class="d-flex gap-5 radio">
+                                <div>
+                                    <input class="form-check-input" type="radio" name="gender" value="male" checked />
+                                    <label for="">Male</label>
+                                </div>
+                                <div>
+                                    <input class="form-check-input" type="radio" name="gender" value="female" />
+                                    <label for="">Female</label>
+                                </div>
+                            
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Age:</label>
+                            <input type="number" placeholder="25" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Weight (kg):</label>
+                            <input type="number" placeholder="60" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Height (cm):</label>
+                            <input type="number" placeholder="180" class="form-control">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Activity Level:</label>
+                            <select class="form-control">
+                                <option>Sedentary (office job)</option>
+                                <option>Light Exercise (1-2 days/week)</option>
+                                <option>Moderate Exercise (3-5 days/week)</option>
+                                <option>Heavy Exercise (6-7 days/week)</option>
+                                <option>Athlete (2x per day)</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Calculate</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>

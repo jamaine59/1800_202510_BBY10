@@ -1,12 +1,49 @@
 body {
-  background-color: #2cd543;
+  background-color: #242424;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+.navbar {
+  background-color: #ffb433;
+}
 
+.header {
+  color: #f1f1f1;
+  text-align: center;
+}
+
+.container {
+  background-color: #f1f1f1;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 50px;
+  width: 50%;
+}
+
+.btn-primary {
+  background-color: #ffb433 !important;
+  border-color: #ffb433 !important;
+}
+.nav-item .active {
+  background-color: #ffb433 !important;
+}
+.nav-link {
+  color: #242424 !important;
+}
+.form-check-input:checked {
+  background-color: #ff5733 !important;
+}
+
+.table {
+  width: 100%;
+}
+
+.radio {
+  padding-left: 20px;
+}
 
 .nav-tabs .nav-link:focus,
 .nav-tabs .nav-link.active:focus,
