@@ -1,16 +1,34 @@
 body {
   height: 100vh;
-  background-color: #2cd543;
+  background-color: #242424;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .navbar {
-  background-color: #21b034;
+  background-color: #ffb433;
 }
 
 .nav__logo {
   height: 55px;
   width: 55px;
+}
+
+.sticky-footer {
+  
+  background-color: #ffb433;
+  position: fixed;
+  bottom: 20px; /* Distance from bottom */
+  right: 20px; /* Distance from right */
+  z-index: 1000;
+}
+
+.card {
+  background-color: #f1f1f1;
+}
+
+.btn-primary {
+  background-color: #ffb433 !important;
+  border-color: #ffb433 !important;
 }
