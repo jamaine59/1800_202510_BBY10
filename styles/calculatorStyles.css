@@ -1,18 +1,34 @@
+* {
+  outline: none;
+}
+
+input:focus,
+button:focus,
+textarea:focus {
+  outline: 2px solid #4caf50;
+}
+
 body {
-  background-color: #242424;
-  height: 100vh;
+  /* height: 100vh; */
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
 }
 
 .navbar {
-  background-color: #ffb433;
+  background-color: #79b791;
+  height: 4.5rem;
+  width: 100%;
 }
 
 .header {
   color: #f1f1f1;
   text-align: center;
+}
+
+.main{
+  position: relative;
 }
 
 .container {
@@ -21,20 +37,27 @@ body {
   padding: 20px;
   margin-top: 50px;
   width: 50%;
+  /* height: calc(100vh - 10rem); */
 }
 
 .btn-primary {
-  background-color: #ffb433 !important;
-  border-color: #ffb433 !important;
+  background-color: #79b791 !important;
+  border-color: #79b791 !important;
+  color: #242424;
 }
 .nav-item .active {
-  background-color: #ffb433 !important;
+  /* color: #242424 !important; */
 }
+
+.form-tab .active {
+  background-color: #79b791 !important;
+}
+
 .nav-link {
   color: #242424 !important;
 }
 .form-check-input:checked {
-  background-color: #ff5733 !important;
+  background-color: #79b791 !important;
 }
 
 .table {

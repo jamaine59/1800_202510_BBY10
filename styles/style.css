@@ -1,13 +1,13 @@
 body {
-  height: 100vh;
-  background-color: #2cd543;
+  height: calc(100vh + 4.5rem);
+  background-color: #1B2F33;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .navbar {
-  background-color: #21b034;
+  /* background-color: #21b034; */
 }
 
 .nav__logo {
