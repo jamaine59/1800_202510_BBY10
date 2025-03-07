@@ -7,10 +7,12 @@ body {
 }
 
 .navbar {
-  /* background-color: #21b034; */
+  background-color: #79b791;
+  height: 4.5rem;
+  width: 100%;
 }
 
 .nav__logo {
-  height: 55px;
-  width: 55px;
+  height: 4rem;
+  width: 4rem;
 }
