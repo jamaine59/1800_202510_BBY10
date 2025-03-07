@@ -1,6 +1,6 @@
 body {
   height: calc(100vh + 4.5rem);
-  background-color: #1B2F33;
+  background-color: #1b2f33;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,4 +15,9 @@ body {
 .nav__logo {
   height: 4rem;
   width: 4rem;
+}
+
+.nav__logo--lg {
+  height: 6rem;
+  width: 6rem;
 }
