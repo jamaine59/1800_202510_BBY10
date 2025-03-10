@@ -14,3 +14,49 @@ body {
   height: 55px;
   width: 55px;
 }
+
+/* Custom styles for Nav Tabs */
+.nav-tabs .nav-link {
+  font-weight: bold;
+  color: #333;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #4CAF50; /* Green background for active tab */
+  color: white;
+  border-color: #4CAF50; /* Border color for active tab */
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+}
+
+h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-control {
+  border-radius: 4px;
+  padding: 10px;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 12px;
+  background-color: #4CAF50;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+}

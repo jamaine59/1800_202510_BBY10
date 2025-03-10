@@ -37,40 +37,77 @@
         
 
         <img src="./images/Logo.png" alt="DietBuddy Logo" class="main__logo">
-        <div class="login-container">
-            <h2>Login</h2>
-            <form action="login" method="POST">
-                <div class="form-group">
-                    <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+        <div class="container">
+            <!-- Nav Tabs for Login and Sign Up -->
+            <ul class="nav nav-tabs mt-5" id="loginSignUpTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link active" id="login-tab" data-bs-toggle="tab" href="#login" role="tab"
+                        aria-controls="login" aria-selected="true">Login</a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="nav-link" id="signup-tab" data-bs-toggle="tab" href="#signup" role="tab"
+                        aria-controls="signup" aria-selected="false">Sign Up</a>
+                </li>
+            </ul>
+    
+            <!-- Tab Content -->
+            <div class="tab-content" id="loginSignUpTabsContent">
+                <!-- Login Form Tab -->
+                <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                    <div class="card p-4 mt-3">
+                        <form>
+                            <div class="mb-3">
+                                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                            
+                            </div>
+                            <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="exampleInputPassword1">
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
                 </div>
-
-                <div class="form-group">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+    
+                <!-- Sign Up Form Tab -->
+                <div class="tab-pane fade" id="signup" role="tabpanel" aria-labelledby="signup-tab">
+                    <div class="card p-4 mt-3">
+                        <form>
+                            <!-- First Name and Last Name -->
+                            <div class="mb-3">
+                                <label for="firstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="lastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                            </div>
+    
+                            <!-- Email -->
+                            <div class="mb-3">
+                                <label for="signUpEmail" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="signUpEmail" aria-describedby="signUpEmailHelp" required>
+                            
+                            </div>
+    
+                            <!-- Password -->
+                            <div class="mb-3">
+                                <label for="signUpPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="signUpPassword" required>
+                            </div>
+    
+        
+    
+                            <!-- Submit Button -->
+                            <button type="submit" class="btn btn-primary">Sign Up</button>
+                        </form>
+                    </div>
                 </div>
-
-                <button type="submit">Submit</button>
-            </form>
-           </div>
-        <div class="sign up-container">
-          <h2>Sign up</h2>
-          <form action="welcome.html" method="POST">
-            <div class="input-group">
-              <label for="username">Username</label>
-              <input type="text" id="username" name="username" required>
             </div>
-            <div class="input-group">
-              <label for="email" id="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Sign up</button>
-          </form>
         </div>
+    
     </main>
 
     <!-- Stuff for body goes here -->
