@@ -73,17 +73,21 @@
             background-color: #45a049;
         }
 
-        .day-column h4 {
+        .day-column h4, .day-column h5, .day-column h6 {
             margin-bottom: 20px;
         }
 
-        .meal-planner .row {
-            display: flex;
-            justify-content: space-between;
+        /* Adjusting the width of each day-column for 3 per row */
+        .meal-planner .col-md-4 {
+            flex: 0 0 32%; /* Adjusts width to 32% to fit 3 items in one row */
+            margin-bottom: 20px;
         }
 
-        .meal-planner .col-md-3 {
-            flex: 0 0 32%;
+        /* Make sure the form fills properly on smaller screens */
+        @media (max-width: 768px) {
+            .meal-planner .col-md-4 {
+                flex: 0 0 100%; /* Stacks columns on smaller screens */
+            }
         }
     </style>
 </head>
@@ -97,7 +101,7 @@
         <form>
             <div class="row">
                 <!-- Monday -->
-                <div class="col-md-3 day-column">
+                <div class="col-md-4 day-column">
                     <h4>Monday</h4>
                     <div class="meal-column">
                         <label for="monday-breakfast-calories">Calories for Breakfast</label>
@@ -138,7 +142,7 @@
                 </div>
 
                 <!-- Tuesday -->
-                <div class="col-md-3 day-column">
+                <div class="col-md-4 day-column">
                     <h4>Tuesday</h4>
                     <div class="meal-column">
                         <label for="tuesday-breakfast-calories">Calories for Breakfast</label>
@@ -219,7 +223,9 @@
                     </div>
                 </div>
 
-                <!-- Thursday -->
+             
+            <div class="row">
+              <!-- Thursday -->
                 <div class="col-md-3 day-column">
                     <h4>Thursday</h4>
                     <div class="meal-column">
@@ -341,51 +347,50 @@
                         <input type="text" id="saturday-allergies" name="saturday-allergies" placeholder="Enter any allergies" required>
                     </div>
                 </div>
-                
-              <!-- Sunday -->
+            <!-- Sunday -->
             <div class="col-md-3 day-column">
-                    <h6>Sunday</h6>
-                    <div class="meal-column">
-                        <label for="sunday-breakfast-calories">Calories for Breakfast</label>
-                        <input type="number" id="sunday-breakfast-calories" name="sunday-breakfast-calories" placeholder="Enter calories for breakfast" required>
-                    </div>
-                    <div class="meal-column">
-                        <label for="saturday-lunch-calories">Calories for Lunch</label>
-                        <input type="number" id="sunday-lunch-calories" name="sunday-lunch-calories" placeholder="Enter calories for lunch" required>
-                    </div>
-                    <div class="meal-column">
-                        <label for="sunday-dinner-calories">Calories for Dinner</label>
-                        <input type="number" id="sunday-dinner-calories" name="sunday-dinner-calories" placeholder="Enter calories for dinner" required>
-                    </div>
-                    <div class="meal-column">
-                        <label for="sunday-snack-calories">Calories for Snack</label>
-                        <input type="number" id="sunday-snack-calories" name="sunday-snack-calories" placeholder="Enter calories for snack" required>
-                    </div>
-                    <div class="meal-column">
-                        <label for="sunday-diet">Diet</label>
-                        <input type="text" id="sunday-diet" name="sunday-diet" placeholder="Enter your diet type" required>
-                    </div>
-                    <div class="meal-column">
-                        <label for="sunday-carbs">Carbs (g)</label>
-                        <input type="number" id="sunday-carbs" name="sunday-carbs" placeholder="Enter carbs" required>
-                    </div>
-                    <div class="meal-column">
-                        <label for="sunday-protein">Protein (g)</label>
-                        <input type="number" id="sunday-protein" name="sunday-protein" placeholder="Enter protein" required>
-                    </div>
-                    <div class="meal-column">
-                        <label for="sunday-fat">Fat (g)</label>
-                        <input type="number" id="sunday-fat" name="sunday-fat" placeholder="Enter fat" required>
-                    </div>
-                    <div class="meal-column">
-                        <label for="sunday-allergies">Allergies</label>
-                        <input type="text" id="sunday-allergies" name="sunday-allergies" placeholder="Enter any allergies" required>
-                    </div>
+                <h6>Sunday</h6>
+                <div class="meal-column">
+                    <label for="sunday-breakfast-calories">Calories for Breakfast</label>
+                    <input type="number" id="sunday-breakfast-calories" name="sunday-breakfast-calories" placeholder="Enter calories for breakfast" required>
                 </div>
-
-            <button class="btn-submit" type="submit">Submit Meal Plan</button>
-        </form>
-    </div>
+                <div class="meal-column">
+                    <label for="saturday-lunch-calories">Calories for Lunch</label>
+                    <input type="number" id="sunday-lunch-calories" name="sunday-lunch-calories" placeholder="Enter calories for lunch" required>
+                </div>
+                <div class="meal-column">
+                    <label for="sunday-dinner-calories">Calories for Dinner</label>
+                    <input type="number" id="sunday-dinner-calories" name="sunday-dinner-calories" placeholder="Enter calories for dinner" required>
+                </div>
+                <div class="meal-column">
+                    <label for="sunday-snack-calories">Calories for Snack</label>
+                    <input type="number" id="sunday-snack-calories" name="sunday-snack-calories" placeholder="Enter calories for snack" required>
+                </div>
+                <div class="meal-column">
+                    <label for="sunday-diet">Diet</label>
+                    <input type="text" id="sunday-diet" name="sunday-diet" placeholder="Enter your diet type" required>
+                </div>
+                <div class="meal-column">
+                    <label for="sunday-carbs">Carbs (g)</label>
+                    <input type="number" id="sunday-carbs" name="sunday-carbs" placeholder="Enter carbs" required>
+                </div>
+                <div class="meal-column">
+                    <label for="sunday-protein">Protein (g)</label>
+                    <input type="number" id="sunday-protein" name="sunday-protein" placeholder="Enter protein" required>
+                </div>
+                <div class="meal-column">
+                    <label for="sunday-fat">Fat (g)</label>
+                    <input type="number" id="sunday-fat" name="sunday-fat" placeholder="Enter fat" required>
+                </div>
+                <div class="meal-column">
+                    <label for="sunday-allergies">Allergies</label>
+                    <input type="text" id="sunday-allergies" name="sunday-allergies" placeholder="Enter any allergies" required>
+                </div>
+            </div>
+         </div>
+        <button class="btn-submit" type="submit">Submit Meal Plan</button>
+    </form>
+</div>
 </div>
 
 </body>
