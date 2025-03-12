@@ -1,5 +1,6 @@
 body {
-  height: calc(100vh + 4.5rem);
+  /* height: calc(100vh + 4.5rem); */
+  height: 100vh;
   background-color: #1b2f33;
   display: flex;
   justify-content: center;
@@ -25,13 +26,13 @@ body {
 /* Custom styles for Nav Tabs */
 .nav-tabs .nav-link {
   font-weight: bold;
-  color: #333;
+  color: white;
 }
 
 .nav-tabs .nav-link.active {
-  background-color: #4CAF50; /* Green background for active tab */
+  background-color: #79b791; /* Green background for active tab */
   color: white;
-  border-color: #4CAF50; /* Border color for active tab */
+  border-color: #79b791; /* Border color for active tab */
 }
 
 .card {
@@ -58,13 +59,23 @@ h2 {
 .btn-primary {
   width: 100%;
   padding: 12px;
-  background-color: #4CAF50;
+  background-color: #79b791;
   border: none;
   border-radius: 4px;
   font-size: 16px;
 }
 
 .btn-primary:hover {
-  background-color: #45a049;
+  background-color: #79b791;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__logo {
+  width: 50%;
+  height: 50%;
+}
