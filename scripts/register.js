@@ -14,8 +14,6 @@ registerForm.addEventListener("submit", function (event) {
     .createUserWithEmailAndPassword(email, password)
     .then(function (userCredential) {
       const user = userCredential.user;
-      console.log("User registered:", user);
-
       // Create a user document in Firestore with name and email
       return db.collection("users").doc(user.uid).set({
         name: name,
@@ -23,12 +21,11 @@ registerForm.addEventListener("submit", function (event) {
       });
     })
     .then(function () {
-      alert("Registration successful!");
+      window.location.href = "home.html";
     })
     .catch(function (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      console.error("Error code:", errorCode, "Error message:", errorMessage);
       alert("Error: " + errorMessage);
     });
 });

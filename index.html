@@ -50,16 +50,15 @@
                 <!-- Login Form Tab -->
                 <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
                     <div class="card p-4 mt-3">
-                        <form>
+                        <form id="loginForm">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1"
-                                    aria-describedby="emailHelp">
+                                <input type="email" class="form-control" id="loginEmail" aria-describedby="emailHelp">
 
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1">
+                                <input type="password" class="form-control" id="loginPassword">
                             </div>
 
                             <button type="submit" class="btn btn-primary">Submit</button>
@@ -114,6 +113,7 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script type="module" src="./scripts/register.js"></script>
+    <script type="module" src="./scripts/login.js"></script>
 
 </body>
 
