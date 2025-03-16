@@ -79,56 +79,61 @@
             </div>
         </div>
     </nav>
-    <div class="container">
-        <h1>Weekly Meal Plan</h1>
+    <div class="container container--mealPlanner">
+        <h1 class="planner-header">Create your meal plan right here in seconds
+        </h1>
 
         <div class="container d-flex justify-content-center align-items-center">
             <div class="card p-4" style="width: 100%; max-width: 400px;">
                 <h2 class="text-center mb-4">Preferred Diet</h2>
                 <div class="btn-group d-flex flex-wrap mb-4">
                     <button class="btn btn-outline-primary flex-fill m-1">
-                        <img src="./images/anything.svg" alt="Anything">
+                        <img src="./images/anything.svg" class="diet-img" alt="Anything">
                         Anything
                     </button>
                     <button class="btn btn-outline-primary flex-fill m-1">
-                        <img src="./images/keto.png" alt="Keto">
+                        <img src="./images/keto.png" class="diet-img" alt="Keto">
                         Keto
                     </button>
                     <button class="btn btn-outline-primary flex-fill m-1">
-                        <img src="./images/glutenFree.png" alt="Gluten Free">
+                        <img src="./images/glutenFree.png" class="diet-img" alt="Gluten Free">
                         Gluten Free
                     </button>
                     <button class="btn btn-outline-primary flex-fill m-1">
-                        <img src="./images/paleo.png" alt="Paleo">
+                        <img src="./images/paleo.png" class="diet-img" alt="Paleo">
                         Paleo
                     </button>
                     <button class="btn btn-outline-primary flex-fill m-1">
-                        <img src="./images/vegan.png" alt="Vegan">
+                        <img src="./images/vegan.png" class="diet-img" alt="Vegan">
                         Vegan
                     </button>
                     <button class="btn btn-outline-primary flex-fill m-1">
-                        <img src="./images/vegetarian.png" alt="Vegetarian">
+                        <img src="./images/vegetarian.png" class="diet-img" alt="Vegetarian">
                         Vegetarian
                     </button>
                 </div>
                 <div class="mb-3">
                     <label for="calories" class="form-label">I want to eat</label>
                     <div class="input-group">
-                        <input type="number" class="form-control" id="calories" value="1800">
+                        <input type="number" class="form-control" id="calories" placeholder="1800">
                         <span class="input-group-text">calories</span>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <label for="meals" class="form-label">in</label>
-                    <div class="input-group">
-                        <input type="number" class="form-control" id="meals" value="3">
-                        <span class="input-group-text">meals</span>
+                <label for="planType" class="form-label">Plan Type</label>
+                <div class="d-flex gap-2 mb-4">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="planType" id="dailyPlan" value="daily"
+                            checked>
+                        <label class="form-check-label" for="dailyPlan">
+                            Daily
+                        </label>
                     </div>
-                </div>
-                <div class="mb-4">
-                    <label class="form-check-label">At least 90g Carbs</label><br>
-                    <label class="form-check-label">At least 40g Fat</label><br>
-                    <label class="form-check-label">At least 90g Protein</label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="planType" id="weeklyPlan" value="weekly">
+                        <label class="form-check-label" for="weeklyPlan">
+                            Weekly
+                        </label>
+                    </div>
                 </div>
                 <button class="btn btn-warning w-100">Generate</button>
             </div>

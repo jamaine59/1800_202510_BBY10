@@ -1,0 +1,52 @@
+.container--mealPlanner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.planner-header {
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.btn-outline-primary {
+  border-color: #79b791;
+  color: #1b2f33;
+}
+/* .btn-outline-primary:active {
+  background-color: #79b791;
+  border-color: #79b791;
+  color: white;
+} */
+.btn-outline-primary:hover {
+  background-color: #79b791;
+  border-color: #79b791;
+  color: white;
+}
+
+.btn-outline-primary:focus {
+  background-color: #79b791;
+  border-color: #79b791;
+}
+
+.btn-warning {
+  background-color: #79b791;
+  border-color: #79b791;
+}
+
+.diet-img {
+  width: 2rem;
+  height: 2rem;
+}
+
+.form-check-input:checked {
+  background-color: #79b791 !important;
+}
+
+@media (min-width: 1281px) and (max-width: 1600px) {
+  .container--mealPlanner {
+    width: auto;
+  }
+}

@@ -78,7 +78,7 @@ main {
   height: 50%;
 }
 
-.container {
+.container--login {
   width: 90%;
 }
 
@@ -95,7 +95,7 @@ main {
     height: 20%;
   }
 
-  .container {
+  .container--login {
     width: 30%;
   }
 }
