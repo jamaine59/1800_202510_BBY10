@@ -2,9 +2,6 @@ body {
   /* height: calc(100vh + 4.5rem); */
   height: 100vh;
   background-color: #1b2f33;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .navbar {
@@ -76,6 +73,29 @@ main {
 }
 
 .main__logo {
+  margin-top: 3rem;
   width: 50%;
   height: 50%;
+}
+
+.container {
+  width: 90%;
+}
+
+@media screen and (min-width: 701px) and (max-width: 1280px) {
+  .container {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1600px) {
+  .main__logo {
+    margin-top: 3rem;
+    width: 20%;
+    height: 20%;
+  }
+
+  .container {
+    width: 30%;
+  }
 }
