@@ -15,20 +15,22 @@
   border-color: #79b791;
   color: #1b2f33;
 }
-/* .btn-outline-primary:active {
+
+.btn:focus {
+  background-color: #79b791 !important;
+  border-color: #79b791 !important;
+}
+
+.btn.active {
   background-color: #79b791;
   border-color: #79b791;
-  color: white;
-} */
+  color: #1b2f33;
+}
+
 .btn-outline-primary:hover {
   background-color: #79b791;
   border-color: #79b791;
   color: white;
-}
-
-.btn-outline-primary:focus {
-  background-color: #79b791;
-  border-color: #79b791;
 }
 
 .btn-warning {
