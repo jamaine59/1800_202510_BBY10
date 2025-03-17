@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Dietbuddy - Post Your Meals</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Dietbuddy</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">Messages</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Main content -->
+<div class="container">
+  <div class="row">
+    <!-- Left Sidebar (Profile) -->
+    <div class="col-sm-3 well">
+      <div class="well">
+        <p><a href="#">My Profile</a></p>
+        <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
+      </div>
+      <div class="well">
+        <p><a href="#">Interests</a></p>
+        <p>
+          <span class="label label-default">Health</span>
+          <span class="label label-primary">Fitness</span>
+          <span class="label label-success">Dieting</span>
+          <span class="label label-info">Recipes</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Center Content (Feed) -->
+    <div class="col-sm-7">
+      <div class="well">
+        <h3>Share Your Meal</h3>
+        <form action="#" method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+            <label for="mealName">Meal Name:</label>
+            <input type="text" class="form-control" id="mealName" name="mealName" required>
+          </div>
+          <div class="form-group">
+            <label for="mealDescription">Meal Description:</label>
+            <textarea class="form-control" id="mealDescription" name="mealDescription" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="mealImage">Upload Meal Image:</label>
+            <input type="file" class="form-control" id="mealImage" name="mealImage" required>
+          </div>
+          <button type="submit" class="btn btn-primary">Post Meal</button>
+        </form>
+      </div>
+
+      <!-- Meal Posts -->
+      <div class="meal-post">
+        <div class="well">
+          <h4>Spaghetti Bolognese</h4>
+          <p>A classic Italian dish with a rich tomato and meat sauce served with pasta.</p>
+          <img src="meal.jpg" class="img-responsive" alt="Meal Image" style="width:100%; height:auto;">
+        </div>
+      </div>
+
+      <div class="meal-post">
+        <div class="well">
+          <h4>Grilled Chicken Salad</h4>
+          <p>Grilled chicken breast served with a fresh salad of mixed greens and a light vinaigrette.</p>
+          <img src="meal2.jpg" class="img-responsive" alt="Meal Image" style="width:100%; height:auto;">
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Sidebar (Upcoming Events) -->
+    <div class="col-sm-2 well">
+      <div class="thumbnail">
+        <p>Upcoming Events:</p>
+        <img src="paris.jpg" alt="Paris" width="400" height="300">
+        <p><strong>Paris</strong></p>
+        <p>Fri. 27 November 2015</p>
+        <button class="btn btn-primary">Info</button>
+      </div>
+      <div class="well">
+        <p>ADS</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer class="container-fluid text-center">
+  <p>Footer Text - Dietbuddy</p>
+</footer>
+
+</body>
+</html>
