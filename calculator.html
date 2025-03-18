@@ -19,7 +19,7 @@
 
 <body>
 
-    <nav class="navbar fixed-top">
+    <nav class="navbar d-lg-none">
 
         <div class="container-fluid">
             <a href="./home.html">
@@ -38,30 +38,58 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                            <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="./calculator.html">Calorie Counter</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Mealplanner</a>
+                            <a class="nav-link" href="./mealPlanner.html">Mealplanner</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Social</a>
+                            <a class="nav-link" href="./social.html">Social</a>
                         </li>
                     </ul>
-                    <form class="d-flex mt-3" role="search">
+                    <!-- <form class="d-flex mt-3" role="search">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-outline-success" type="submit">Search</button>
-                    </form>
+                    </form> -->
                 </div>
+            </div>
+        </div>
+    </nav>
+    <nav class="navbar navbar-expand-lg d-sm-none d-lg-flex py-5">
+        <div class="container-fluid">
+            <a href="./home.html" class="mr-3">
+                <img src="./images/Logo.png" alt="DietBuddy Logo" class="nav__logo nav__logo--lg">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./calculator.html">Calorie Counter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./mealPlanner.html">Meal Planner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./social.html">Social</a>
+                    </li>
+                </ul>
             </div>
         </div>
     </nav>
 
     <!-- Calculator Form -->
-    <main class="pt-5">
-        <h1 class="header">The Calorie Calculator can be used to estimate the number of calories a person needs to consume each day.
+    <main class="pt-5 main">
+        <h1 class="header">The Calorie Calculator can be used to estimate the number of calories a person needs to
+            consume each day.
             This
             calculator can also provide some simple guidelines for gaining or losing weight.</h1>
 
@@ -69,12 +97,12 @@
             <!-- Navigation Tabs -->
             <ul class="nav nav-tabs" id="unitTabs" role="tablist">
                 <li class="nav-item">
-                    <button class="nav-link active" id="imperial-tab" data-bs-toggle="tab" data-bs-target="#imperial"
-                        type="button" role="tab">Imperial</button>
+                    <button class="nav-link form-tab active" id="imperial-tab" data-bs-toggle="tab"
+                        data-bs-target="#imperial" type="button" role="tab">Imperial</button>
                 </li>
                 <li class="nav-item">
-                    <button class="nav-link" id="metric-tab" data-bs-toggle="tab" data-bs-target="#metric" type="button"
-                        role="tab">Metric</button>
+                    <button class="nav-link form-tab" id="metric-tab" data-bs-toggle="tab" data-bs-target="#metric"
+                        type="button" role="tab">Metric</button>
                 </li>
             </ul>
 
@@ -156,7 +184,7 @@
                                     <input class="form-check-input" type="radio" name="gender" value="female" />
                                     <label for="">Female</label>
                                 </div>
-                            
+
                             </div>
                         </div>
                         <div class="mb-3">
