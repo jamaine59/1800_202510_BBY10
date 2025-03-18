@@ -5,55 +5,81 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./styles/socialmediamealposts.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="#">Dietbuddy</a>
+  <nav class="navbar d-lg-none">
+
+    <div class="container-fluid">
+        <a href="./home.html">
+            <img src="./images/Logo.png" alt="DietBuddy Logo" class="nav__logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DietBuddy</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./calculator.html">Calorie Counter</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./mealPlanner.html">Mealplanner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./social.html">Social</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Messages</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
-      </ul>
+</nav>
+<nav class="navbar navbar-expand-lg d-sm-none d-lg-flex py-5">
+    <div class="container-fluid">
+        <a href="./home.html" class="mr-3">
+            <img src="./images/Logo.png" alt="DietBuddy Logo" class="nav__logo nav__logo--lg">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./calculator.html">Calorie Counter</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./mealPlanner.html">Meal Planner</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./social.html">Social</a>
+                </li>
+            </ul>
+        </div>
     </div>
-  </div>
 </nav>
 
 <!-- Main content -->
 <div class="container">
   <div class="row">
-    <!-- Left Sidebar (Profile) -->
-    <div class="col-sm-3 well">
-      <div class="well">
-        <p><a href="#">My Profile</a></p>
-        <img src="bird.jpg" class="img-circle" height="65" width="65" alt="Avatar">
-      </div>
-      <div class="well">
-        <p><a href="#">Interests</a></p>
-        <p>
-          <span class="label label-default">Health</span>
-          <span class="label label-primary">Fitness</span>
-          <span class="label label-success">Dieting</span>
-          <span class="label label-info">Recipes</span>
-        </p>
-      </div>
-    </div>
-
+    
     <!-- Center Content (Feed) -->
     <div class="col-sm-7">
       <div class="well">
@@ -94,26 +120,9 @@
 
     </div>
 
-    <!-- Right Sidebar (Upcoming Events) -->
-    <div class="col-sm-2 well">
-      <div class="thumbnail">
-        <p>Upcoming Events:</p>
-        <img src="paris.jpg" alt="Paris" width="400" height="300">
-        <p><strong>Paris</strong></p>
-        <p>Fri. 27 November 2015</p>
-        <button class="btn btn-primary">Info</button>
-      </div>
-      <div class="well">
-        <p>ADS</p>
-      </div>
-    </div>
-  </div>
-</div>
+    
 
-<!-- Footer -->
-<footer class="container-fluid text-center">
-  <p>Footer Text - Dietbuddy</p>
-</footer>
+
 
 </body>
 </html>
