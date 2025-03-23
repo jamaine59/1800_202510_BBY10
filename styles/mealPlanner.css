@@ -81,6 +81,15 @@ body {
 .card {
   width: 50%;
 }
+
+#plan:has(.accordion) {
+  width: 50%;
+}
+
+.accordion {
+  width: 100%;
+}
+
 @media (min-width: 1281px) and (max-width: 1600px) {
   .container--mealPlanner {
     width: auto;
@@ -91,5 +100,12 @@ body {
     margin-top: 4rem;
     text-align: center;
     flex-direction: row;
+  }
+
+  .card-body {
+    justify-content: space-around;
+    /* align-items: center; */
+    display: flex;
+    flex-direction: column;
   }
 }

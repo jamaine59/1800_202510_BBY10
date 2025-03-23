@@ -63,8 +63,8 @@ generateButton.addEventListener("click", async function () {
   } else {
     const { week } = mealPlan;
     console.log(Object.keys(week));
-    plan.innerHTML = `<div class="accordion accordion-flush" id="accordion"></div>`;
-    const accordion = document.getElementById("accordion");
+    plan.innerHTML = `<div class="accordion accordion-flush" id="accordionExample"></div>`;
+    const accordion = document.getElementById("accordionExample");
 
     accordion.innerHTML = Object.entries(week)
       .map(([day, { meals }], index) => {
@@ -80,14 +80,14 @@ generateButton.addEventListener("click", async function () {
           </button>
         </h2>
         <div id="flush-collapse${day}" class="accordion-collapse collapse" 
-          aria-labelledby="heading${index}" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body d-flex flex-wrap justify-content-around">
+          aria-labelledby="heading${index}" data-bs-parent="#accordionExample">
+          <div class="accordion-body d-flex justify-content-around">
             ${meals
               .map((meal) => {
                 return `
-                <div class="card" style="width: 18rem;">
+                <div class="card" style="width: 18rem; margin: 1rem 0.8rem;">
                   <img src="https://spoonacular.com/recipeImages/${meal.id}-556x370.jpg" class="card-img-top" alt="${meal.title}">
-                  <div class="card-body justify-content-evenly">
+                  <div class="card-body">
                     <h5 class="card-title">${meal.title}</h5>
                     <p class="card-text"><strong>Ready in: </strong>${meal.readyInMinutes} minutes</p>
                     <a href="${meal.sourceUrl}" class="btn btn-primary">Meal recipe</a>
