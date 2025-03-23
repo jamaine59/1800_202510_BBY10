@@ -39,6 +39,7 @@ generateButton.addEventListener("click", async function () {
   console.log(mealPlan);
 
   const plan = document.getElementById("plan");
+  const nutrients = document.getElementById("nutrients");
 
   if (Object.keys(mealPlan).length === 2) {
     plan.innerHTML = mealPlan.meals
@@ -60,6 +61,25 @@ generateButton.addEventListener("click", async function () {
               </div>`;
       })
       .join("");
+    nutrients.innerHTML = `<div class="card m-4" style="width: 18rem;">
+      <div class="card-header">
+        Nutrients
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Calories: ${Math.floor(
+          mealPlan.nutrients.calories
+        )}</li>
+        <li class="list-group-item">Protein: ${Math.floor(
+          mealPlan.nutrients.protein
+        )}</li>
+        <li class="list-group-item">Carbohydrate: ${Math.floor(
+          mealPlan.nutrients.carbohydrates
+        )}</li>
+        <li class="list-group-item">Fat: ${Math.floor(
+          mealPlan.nutrients.fat
+        )}</li>
+      </ul>
+    </div>`;
   } else {
     const { week } = mealPlan;
     console.log(Object.keys(week));
@@ -67,7 +87,7 @@ generateButton.addEventListener("click", async function () {
     const accordion = document.getElementById("accordionExample");
 
     accordion.innerHTML = Object.entries(week)
-      .map(([day, { meals }], index) => {
+      .map(([day, { meals, nutrients }], index) => {
         return `
       <div class="accordion-item">
         <h2 class="accordion-header" id="heading${index}">
@@ -81,7 +101,7 @@ generateButton.addEventListener("click", async function () {
         </h2>
         <div id="flush-collapse${day}" class="accordion-collapse collapse" 
           aria-labelledby="heading${index}" data-bs-parent="#accordionExample">
-          <div class="accordion-body d-flex justify-content-around">
+          <div class="accordion-body d-flex justify-content-around w-100">
             ${meals
               .map((meal) => {
                 return `
@@ -96,6 +116,23 @@ generateButton.addEventListener("click", async function () {
               `;
               })
               .join("")}
+          </div>
+          <div class="card m-4" style="width: 18rem;">
+            <div class="card-header">
+              Nutrients
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">Calories: ${Math.floor(
+                nutrients.calories
+              )}</li>
+              <li class="list-group-item">Protein: ${Math.floor(
+                nutrients.protein
+              )}</li>
+              <li class="list-group-item">Carbohydrate: ${Math.floor(
+                nutrients.carbohydrates
+              )}</li>
+              <li class="list-group-item">Fat: ${Math.floor(nutrients.fat)}</li>
+            </ul>
           </div>
         </div>
       </div>
