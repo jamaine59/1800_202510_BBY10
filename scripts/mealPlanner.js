@@ -44,7 +44,7 @@ generateButton.addEventListener("click", async function () {
     plan.innerHTML = mealPlan.meals
       .map((meal) => {
         return `
-              <div class="card" style="width: 18rem;">
+              <div class="card">
                   <img src=${`https://spoonacular.com/recipeImages/${meal.id}-556x370.jpg`} class="card-img-top" alt=${
           meal.title
         }>
