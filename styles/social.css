@@ -1,11 +1,19 @@
-footer {
-    background-color: #555;
-    color: white;
-    padding: 15px;
-  }
-  .well {
-    background-color: #f7f7f7;
-  }
-  .meal-post {
-    margin-bottom: 20px;
-  }
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+.container {
+  max-width: 800px;
+}
+.meal-post-form {
+  background-color: #fff;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.meal-post-form img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
