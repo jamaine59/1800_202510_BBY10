@@ -1,4 +1,8 @@
+// import firebase from "https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js";
+// import "https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js";
+// import "https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js";
 import { apiKey, apiURL } from "./spoonacularAPI.js";
+import { db, auth } from "./firebaseAPI_BBY10.js";
 
 //adding active class to the selected diet button
 const dietButtons = document.querySelectorAll(".diet-btn");
@@ -33,6 +37,14 @@ generateButton.addEventListener("click", async function () {
 
     const data = await response.json();
     mealPlan = data;
+
+    const user = auth.currentUser; // Get the current authenticated user
+    const userId = user ? user.uid : null;
+
+    if (userId) {
+      // Save meal plan to Firestore
+      await saveMealPlanToFirestore(userId, mealPlan);
+    }
   } catch (error) {
     console.error("Error:", error);
   }
@@ -141,3 +153,20 @@ generateButton.addEventListener("click", async function () {
       .join("");
   }
 });
+
+async function saveMealPlanToFirestore(userId, mealPlan) {
+  if (!userId) {
+    console.error("User is not authenticated.");
+    return;
+  }
+
+  try {
+    const userMeals = db.collection("meals").doc(userId);
+    // merge true will overwrite the existing data -- might change later
+    await userMeals.set(mealPlan, { merge: true });
+
+    console.log("Meal plan successfully saved to Firestore.");
+  } catch (error) {
+    console.error("Error saving meal plan to Firestore:", error);
+  }
+}
