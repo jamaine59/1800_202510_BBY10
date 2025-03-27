@@ -161,7 +161,7 @@ async function saveMealPlanToFirestore(userId, mealPlan) {
     const userMeals = db.collection("users").doc(userId);
 
     // merge true will overwrite the existing data -- might change later
-    await await userMeals.set(
+    await userMeals.set(
       {
         mealPlan: {
           data: mealPlan,
