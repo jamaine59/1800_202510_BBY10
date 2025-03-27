@@ -1,6 +1,3 @@
-// import firebase from "https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js";
-// import "https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js";
-// import "https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js";
 import { apiKey, apiURL } from "./spoonacularAPI.js";
 import { db, auth } from "./firebaseAPI_BBY10.js";
 
@@ -161,9 +158,18 @@ async function saveMealPlanToFirestore(userId, mealPlan) {
   }
 
   try {
-    const userMeals = db.collection("meals").doc(userId);
+    const userMeals = db.collection("users").doc(userId);
+
     // merge true will overwrite the existing data -- might change later
-    await userMeals.set(mealPlan, { merge: true });
+    await await userMeals.set(
+      {
+        mealPlan: {
+          data: mealPlan,
+          savedAt: firebase.firestore.FieldValue.serverTimestamp(),
+        },
+      },
+      { merge: true }
+    );
 
     console.log("Meal plan successfully saved to Firestore.");
   } catch (error) {
