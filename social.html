@@ -86,40 +86,49 @@
 
 
   <main>
-    <div class="container container-social">
-      <!-- <div class="row"> -->
+    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#mealModal" id="postMealButton">
+      Share a Meal
+    </button>
 
-      <!-- Center Content (Feed) -->
-      <div class="col-sm-7">
-        <div class="well">
-          <h3>Share Your Meal</h3>
-          <form type="submit" id="mealForm">
-            <div class="form-group">
-              <label for="mealName">Meal Name:</label>
-              <input type="text" class="form-control" id="mealName" name="mealName" required>
-            </div>
-            <div class="form-group">
-              <label for="mealDescription">Meal Description:</label>
-              <textarea class="form-control" id="mealDescription" name="mealDescription" rows="4" required></textarea>
-            </div>
-            <div class="form-group">
-              <label for="mealImage">Upload Meal Image:</label>
-              <input type="file" class="form-control p-0 px-2 pt-2" id="mealImage" name="mealImage" required>
-            </div>
-            <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="img"
-              id="imgPlacholder" class="mw-100" />
-            <button type=" submit" class="btn btn-primary">Post Meal</button>
-          </form>
+    <!-- Modal -->
+    <div class="modal fade" id="mealModal" tabindex="-1" aria-labelledby="mealModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="mealModalLabel">Share Your Meal</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Your Form Goes Here -->
+            <form type="submit" id="mealForm">
+              <div class="form-group mb-3">
+                <label for="mealName">Meal Name:</label>
+                <input type="text" class="form-control" id="mealName" name="mealName" required>
+              </div>
+              <div class="form-group mb-3">
+                <label for="mealDescription">Meal Description:</label>
+                <textarea class="form-control" id="mealDescription" name="mealDescription" rows="4" required></textarea>
+              </div>
+              <div class="form-group mb-3">
+                <label for="mealImage">Upload Meal Image:</label>
+                <input type="file" class="form-control p-0 px-2 py-2" id="mealImage" name="mealImage" required>
+              </div>
+              <div class="form-group mb-3">
+                <img src="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png" alt="img"
+                  id="imgPlacholder" class="mw-100" />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="submit" form="mealForm" class="btn btn-primary">Post Meal</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          </div>
         </div>
+      </div>
+    </div>
 
-        <!-- </div> -->
   </main>
 
-
-  <!-- <script type="module" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
-  <script type="module" src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script> -->
   <script type="module" src="./scripts/firebaseAPI_BBY10.js"></script>
   <script type="module" src="./scripts/postMeal.js"></script>
   <script type="module" src="./scripts/logout.js"></script>
