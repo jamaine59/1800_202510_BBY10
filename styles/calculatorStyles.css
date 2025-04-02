@@ -9,22 +9,24 @@ textarea:focus {
 }
 
 body {
-  /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
 }
 
-
+select.form-control {
+  padding: 0 1rem;
+}
 
 .header {
   color: #f1f1f1;
   text-align: center;
 }
 
-.main{
+.main {
   position: relative;
+  padding-bottom: 4rem;
 }
 
 .container {
@@ -33,7 +35,6 @@ body {
   padding: 20px;
   margin-top: 50px;
   width: 50%;
-  /* height: calc(100vh - 10rem); */
 }
 
 .btn-primary {
@@ -69,4 +70,11 @@ body {
 .nav-tabs .nav-link:active {
   outline: none !important;
   box-shadow: none !important;
+}
+
+@media (min-width: 1281px) and (max-width: 1600px) {
+  h1 {
+    font-size: 1.5rem;
+    width: 60%;
+  }
 }
