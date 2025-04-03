@@ -8,21 +8,21 @@ document.querySelectorAll(".tab-pane form").forEach((form) => {
     const selects = form.querySelectorAll("select.form-control");
 
     if (!genderInput) {
-      alert("Please select your gender.");
+      Swal.fire("Please select your gender.");
       return;
     }
     const gender = genderInput.value;
 
     for (let input of inputs) {
       if (input.value.trim() === "") {
-        alert("Please fill in all input fields.");
+        Swal.fire("Please fill in all input fields.");
         return;
       }
     }
 
     for (let select of selects) {
       if (select.value.trim() === "") {
-        alert("Please select all dropdown options.");
+        Swal.fire("Please select all dropdown options.");
         return;
       }
     }
@@ -50,7 +50,7 @@ document.querySelectorAll(".tab-pane form").forEach((form) => {
       const heightMatches = heightText.match(/\d+/g);
 
       if (!heightMatches || heightMatches.length < 2) {
-        alert("Please select a valid height.");
+        Swal.fire("Please select a valid height.");
         return;
       }
 

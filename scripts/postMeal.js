@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const description = document.getElementById("mealDescription").value;
 
       if (!mealName || !description || !ImageFile) {
-        alert("Please fill out all fields.");
+        Swal.fire("Please fill out all fields.");
         return;
       }
 
@@ -68,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
           );
 
         console.log("Meal posted successfully!");
-        alert("Post submitted!");
+        Swal.fire("Post submitted!");
 
         // Optional: reset form
         mealForm.reset();
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ImageString = "";
       } catch (err) {
         console.error("Error posting meal:", err);
-        alert("Something went wrong.");
+        Swal.fire("Something went wrong.");
       }
     });
   });

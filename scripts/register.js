@@ -26,6 +26,6 @@ registerForm.addEventListener("submit", function (event) {
     .catch(function (error) {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert("Error: " + errorMessage);
+      Swal.fire("Error: " + errorMessage);
     });
 });
