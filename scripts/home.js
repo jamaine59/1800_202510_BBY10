@@ -31,7 +31,7 @@ function renderSavedMealPlan(mealPlan) {
     const mealsHTML = mealPlan.meals
       .map(
         (meal) => `
-        <div class="card" style="width: 18rem;">
+        <div class="card" style="width: 12rem;">
           <img src="https://spoonacular.com/recipeImages/${meal.id}-556x370.jpg" class="card-img-top" alt="${meal.title}">
           <div class="card-body">
             <h5 class="card-title">${meal.title}</h5>
@@ -45,7 +45,7 @@ function renderSavedMealPlan(mealPlan) {
 
     const nutrients = mealPlan.nutrients;
     const nutrientsHTML = `
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 12rem;">
         <div class="card-header">Nutrients</div>
         <ul class="list-group list-group-flush">
           <li class="list-group-item">Calories: ${Math.floor(
