@@ -213,8 +213,22 @@ function renderSavedWeeklyMealPlan(mealPlan) {
 
   plan.innerHTML = `<div class="accordion accordion-flush" id="accordionExample"></div>`;
   const accordion = document.getElementById("accordionExample");
+  const dayOrder = [
+    "monday",
+    "tuesday",
+    "wednesday",
+    "thursday",
+    "friday",
+    "saturday",
+    "sunday",
+  ];
 
   accordion.innerHTML = Object.entries(week)
+    .sort(
+      ([dayA], [dayB]) =>
+        dayOrder.indexOf(dayA.toLowerCase()) -
+        dayOrder.indexOf(dayB.toLowerCase())
+    )
     .map(
       ([day, { meals, nutrients }], index) => `
       <div class="accordion-item">
