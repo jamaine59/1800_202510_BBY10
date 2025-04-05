@@ -4,8 +4,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   const postsContainer = document.getElementById("postsContainer");
 
   try {
-    const displaypost = await db.collection("posts").orderBy("createdAt", "desc").get();
-    postsContainer.innerHTML = ""; // Clear previous content
+    const displaypost = await db
+      .collection("posts")
+      .orderBy("createdAt", "desc")
+      .get();
+    postsContainer.innerHTML = "";
 
     displaypost.forEach(async (doc) => {
       const post = doc.data();

@@ -1,6 +1,5 @@
 import { db, auth } from "./firebaseAPI_BBY10.js";
 
-// Handle form submission
 const registerForm = document.getElementById("signUpForm");
 registerForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -9,7 +8,6 @@ registerForm.addEventListener("submit", function (event) {
   const email = document.getElementById("signUpEmail").value;
   const password = document.getElementById("signUpPassword").value;
 
-  // Register user with Firebase Auth
   auth
     .createUserWithEmailAndPassword(email, password)
     .then(function (userCredential) {

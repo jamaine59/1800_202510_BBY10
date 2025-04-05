@@ -1,6 +1,5 @@
-import { auth } from "./firebaseAPI_BBY10.js"; // Import the Firebase auth instance
+import { auth } from "./firebaseAPI_BBY10.js";
 
-// Handle form submission
 const loginForm = document.getElementById("loginForm");
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
@@ -8,7 +7,6 @@ loginForm.addEventListener("submit", function (event) {
   const email = document.getElementById("loginEmail").value;
   const password = document.getElementById("loginPassword").value;
 
-  // Login with Firebase Auth
   auth
     .signInWithEmailAndPassword(email, password)
     .then(function (userCredential) {

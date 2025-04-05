@@ -53,10 +53,8 @@ document.addEventListener("DOMContentLoaded", () => {
       };
 
       try {
-        // ✅ 1. Add post to global "posts" collection
         const postRef = await db.collection("posts").add(postData);
 
-        // ✅ 2. Add post ID to user's "myposts" array
         await db
           .collection("users")
           .doc(user.uid)
@@ -67,10 +65,8 @@ document.addEventListener("DOMContentLoaded", () => {
             { merge: true }
           );
 
-        console.log("Meal posted successfully!");
         Swal.fire("Post submitted!");
 
-        // Optional: reset form
         mealForm.reset();
         document.getElementById("imgPlacholder").src = "";
         ImageFile = null;

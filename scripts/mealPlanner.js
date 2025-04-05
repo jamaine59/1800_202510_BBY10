@@ -69,7 +69,6 @@ generateButton.addEventListener("click", async function () {
   } catch (error) {
     console.error("Error:", error);
   }
-  console.log(mealPlan);
 
   const plan = document.getElementById("plan");
   const nutrients = document.getElementById("nutrients");
@@ -115,7 +114,6 @@ generateButton.addEventListener("click", async function () {
     </div>`;
   } else {
     const { week } = mealPlan;
-    console.log(Object.keys(week));
     plan.innerHTML = `<div class="accordion accordion-flush" id="accordionExample"></div>`;
     const accordion = document.getElementById("accordionExample");
 
@@ -194,8 +192,6 @@ async function saveMealPlanToFirestore(userId, mealPlan) {
       },
       { merge: true }
     );
-
-    console.log("Meal plan successfully saved to Firestore.");
   } catch (error) {
     console.error("Error saving meal plan to Firestore:", error);
   }
@@ -214,7 +210,6 @@ function fetchAndRenderSavedMealPlan() {
       const savedPlan = doc.exists ? doc.data().mealPlan?.data : null;
 
       if (savedPlan && savedPlan.week) {
-        console.log("Rendering saved weekly meal plan...");
         renderSavedWeeklyMealPlan(savedPlan);
       } else {
         console.log("No saved weekly plan found.");
