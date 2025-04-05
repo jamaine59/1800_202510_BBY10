@@ -22,6 +22,7 @@ select.form-control {
 .header {
   color: #f1f1f1;
   text-align: center;
+  font-size: 1.5rem;
 }
 
 .main {
@@ -34,16 +35,13 @@ select.form-control {
   border-radius: 10px;
   padding: 20px;
   margin-top: 50px;
-  width: 50%;
+  width: 70%;
 }
 
 .btn-primary {
   background-color: #79b791 !important;
   border-color: #79b791 !important;
   color: #242424;
-}
-.nav-item .active {
-  /* color: #242424 !important; */
 }
 
 .form-tab .active {
@@ -73,8 +71,11 @@ select.form-control {
 }
 
 @media (min-width: 1281px) and (max-width: 1600px) {
-  h1 {
-    font-size: 1.5rem;
-    width: 60%;
+  .header {
+    font-size: 2.5rem;
+  }
+
+  .container {
+    width: 80%;
   }
 }
