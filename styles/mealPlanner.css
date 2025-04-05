@@ -114,4 +114,7 @@ body {
     display: flex;
     flex-direction: column;
   }
+  .card-daily {
+    height: 26rem;
+  }
 }

@@ -13,11 +13,35 @@ dietButtons.forEach((button) => {
 let mealPlan = [];
 const generateButton = document.querySelector(".btn-warning");
 generateButton.addEventListener("click", async function () {
-  const dietType = document.querySelector(".diet-btn.active").value;
-  const calories = document.getElementById("calories").value;
-  const mealType = document.querySelector(
+  const activeDietBtn = document.querySelector(".diet-btn.active");
+  const caloriesInput = document.getElementById("calories");
+  const selectedMealType = document.querySelector(
     'input[name="planType"]:checked'
-  ).value;
+  );
+
+  if (!activeDietBtn) {
+    Swal.fire("Please select a diet type");
+    return;
+  }
+
+  if (
+    !caloriesInput ||
+    isNaN(caloriesInput.value) ||
+    caloriesInput.value.trim() === "" ||
+    caloriesInput.value <= 0
+  ) {
+    Swal.fire("Please enter a valid number for calories");
+    return;
+  }
+
+  if (!selectedMealType) {
+    Swal.fire("Please select a meal plan type (daily or weekly)");
+    return;
+  }
+
+  const dietType = activeDietBtn.value;
+  const calories = caloriesInput.value;
+  const mealType = selectedMealType.value;
 
   // fetching the meal plan based on user input
   try {
@@ -54,7 +78,7 @@ generateButton.addEventListener("click", async function () {
     plan.innerHTML = mealPlan.meals
       .map((meal) => {
         return `
-              <div class="card">
+              <div class="card card-daily">
                   <img src=${`https://spoonacular.com/recipeImages/${meal.id}-556x370.jpg`} class="card-img-top" alt=${
           meal.title
         }>
