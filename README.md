@@ -1,67 +1,74 @@
 
-# Project Name
+# DietBuddy
 
 ## Overview
-Summarize your project's purpose, problem solved, key features, user benefits, development context, and main technologies used.
+DietBuddy is a fitness-focused web application designed to help users manage their diet by generating personalized meal plans based on their daily caloric needs. It addresses the common challenge of figuring out what to eat to stay on track with fitness goals by providing automated meal recommendations and nutrition tracking.
 
-Example:
+Key features include user authentication, calorie calculators based on user-provided data (age, weight, height, activity level), daily meal plan generation, and a social feature that allows users to share their favorite meals. The app is mobile-responsive and built with a user-centric approach to simplify healthy eating.
 
-This client-side JavaScript web application provides real-time weather updates for cities worldwide. It simplifies accessing weather information through an intuitive mobile-first interface, allowing users to input a city name and receive data on temperature, humidity, and conditions.
-
-Developed for the [Course Name] course, applying User-Centred Design practices, agile project management processes, integrating a weather API, and Firebase backend services.
+Developed as part of the COMP 1800 course at BCIT, this project applies agile development principles, UX/UI design strategies, and full-stack web development skills using modern technologies and third-party APIs.
 
 ---
 
 ## Features
 
-Example:
-- Real-time weather updates for any city.
+- User sign-up and login system with authentication.
 - Responsive design for desktop and mobile.
-- Displays temperature, humidity, and weather conditions.
+- Personalized daily calorie calculator based on user input.
+- Automatic meal plan generation aligned with user's caloric and dietary needs.
+- Users can share meals with others and explore meals shared by the community.
 
 ---
 
 ## Technologies Used
 
-Example:
 - **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Firebase for hosting
+- **Backend**: Firebase Authentication & Hosting
 - **Database**: Firestore
-- **API**: OpenWeatherMap API
+- **API**: Spoonacular API
 
 ---
 
 ## Usage
 
-Example:
 1. Open your browser and visit `http://localhost:3000`.
-2. Enter the name of the city in the search bar and press enter.
-3. View the weather information displayed on the screen.
+2. Create an account or log in with existing credentials.
+3. Open the calculator page and enter your personal stats to calculate your recommended daily calorie intake.
+4. Open the meal planner page and enter your preferred diet, daily caloric intake, and plan type to view your personalized meal plan.
+5. Share meals with others or browse meals shared by the community on the social page.
 
 ---
 
 ## Project Structure
 
-Example:
 ```
-project-name/
-├── src/
-│   ├── index.html
-│   ├── style.css
-│   ├── app.js
-│   └── components/
-├── package.json
+1800_202510_BBY10/
+├── images/
+├── scripts/
+│   ├── calculator.js
+│   ├── home.js
+│   ├── login.js
+│   ├── logout.js
+│   ├── mealPlanner.js
+│   ├── postMeal.js
+│   ├── register.js
+│   └── social.js
+├── styles/
+├── .gitignore
+├── calculator.html
+├── home.html
+├── index.html
+├── mealPlanner.html
 ├── README.md
-└── .gitignore
+└── social.html
 ```
 
 ---
 
 ## Contributors
-- **Ibrahim Abudalah** - CST student with a passion for coding
-- **Brad Muirhead** - Fresh to coding and looking to learn the ropes
-- **Jamaine** - reading fantasy books
-- **Teammate Name** - BCIT CST Student, Frontend enthusiast with a knack for creative design. Fun fact: Has a collection of over 50 houseplants.
+- **Ibrahim Abudalah** - CST student with a passion for coding.
+- **Brad Muirhead** - Fresh to coding and looking to learn the ropes.
+- **Jamaine** - reading fantasy books.
 
 
 ---
@@ -69,9 +76,8 @@ project-name/
 ## Acknowledgments
 
 Example:
-- Weather data sourced from [OpenWeatherMap](https://openweathermap.org/).
+- Nutrition and meal data sourced from [Spoonacular](https://spoonacular.com/food-api).
 - Code snippets for ___ algoirthm were adapted from resources such as [Stack Overflow](https://stackoverflow.com/) and [MDN Web Docs](https://developer.mozilla.org/).
-- Icons sourced from [FontAwesome](https://fontawesome.com/) and images from [Unsplash](https://unsplash.com/).
 
 ---
 
@@ -79,21 +85,17 @@ Example:
 ### Limitations
 
 Example:
-- Currently, the app only supports city-based weather searches.
-- Limited to basic weather parameters like temperature, humidity, and conditions.
+- Currently only generates meal plans based on daily calories—not specific macronutrient goals.
+- No filtering system implemented.
 - The user interface can be further enhanced for accessibility.
 
 ### Future Work
 
 Example: 
-- Add support for location-based weather detection using GPS.
-- Implement additional weather parameters like wind speed and UV index.
+- Add macronutrient breakdown in meal plans.
+- Add dark mode and accessibility enhancements.
 - Create a dark mode for better usability in low-light conditions.
-- Integrate user accounts for saving favorite locations.
+- Integrate customizable user profile.
 
 ---
 
-## License
-
-Example:
-This project is licensed under the MIT License. See the LICENSE file for details.

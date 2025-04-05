@@ -4,3 +4,4 @@ node_modules/
 .vscode/
 firebaseAPI_BBY10.js
 spoonacularAPI.js
+.firebase/
