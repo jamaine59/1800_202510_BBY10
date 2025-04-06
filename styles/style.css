@@ -4,6 +4,10 @@ body {
   background-color: #1b2f33;
 }
 
+body.auth-checking {
+  visibility: hidden;
+}
+
 .navbar {
   background-color: #79b791;
   height: 4.5rem;

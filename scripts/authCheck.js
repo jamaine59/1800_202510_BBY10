@@ -13,6 +13,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!user && protectedPages.includes(currentPage)) {
       console.warn("Not logged in — redirecting");
       window.location.href = "index.html";
+    } else {
+      document.body.classList.remove("auth-checking");
     }
   });
 });
