@@ -1,3 +1,31 @@
+h1 {
+  text-align: center;
+  color: white;
+  padding: 4rem 0;
+}
+
+#postsContainer {
+  padding-bottom: 4rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.card-social-feed {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.feed-img {
+  height: 200px;
+  object-fit: cover;
+  width: 100%;
+}
+
 #postMealButton {
   margin-top: 2rem;
   position: fixed;
