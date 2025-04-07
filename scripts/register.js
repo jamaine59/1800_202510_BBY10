@@ -7,6 +7,7 @@ registerForm.addEventListener("submit", function (event) {
   const name = document.getElementById("signUpName").value;
   const email = document.getElementById("signUpEmail").value;
   const password = document.getElementById("signUpPassword").value;
+  const defaultAvatar = "./images/default-avatar.avif";
 
   auth
     .createUserWithEmailAndPassword(email, password)
@@ -16,6 +17,7 @@ registerForm.addEventListener("submit", function (event) {
       return db.collection("users").doc(user.uid).set({
         name: name,
         email: email,
+        defaultAvatar: defaultAvatar,
       });
     })
     .then(function () {

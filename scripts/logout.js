@@ -18,10 +18,3 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
-
-auth.onAuthStateChanged(async (user) => {
-  const doc = await db.collection("users").doc(user.uid).get();
-  document.getElementById("navGreeting").innerHTML = `Hello, ${
-    doc.data().name
-  }!`;
-});

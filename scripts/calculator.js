@@ -1,3 +1,5 @@
+import { auth, db } from "./firebaseAPI_BBY10.js";
+
 document.querySelectorAll(".tab-pane form").forEach((form) => {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -110,5 +112,21 @@ document.querySelectorAll(".tab-pane form").forEach((form) => {
         <p>You are classified as <strong>${bmiClass}</strong>.</p>
       </div>
     </div>`;
+
+    //added this to save daily intake to fierbase
+    auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        try {
+          await db.collection("users").doc(user.uid).set(
+            {
+              calories: maintenanceCalories,
+            },
+            { merge: true }
+          );
+        } catch (error) {
+          console.error("Error saving calories:", error);
+        }
+      }
+    });
   });
 });
