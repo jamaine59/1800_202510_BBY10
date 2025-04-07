@@ -25,34 +25,44 @@
             <a href="./home.html">
                 <img src="./images/Logo.png" alt="DietBuddy Logo" class="nav__logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
-                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
-                aria-labelledby="offcanvasNavbarLabel">
-                <div class="offcanvas-header">
-                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DietBuddy</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body">
-                    <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./calculator.html">Calorie Counter</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./mealPlanner.html">Mealplanner</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./social.html">Social</a>
-                        </li>
-                        <li class="nav-item">
-                            <button id="logoutButtonMobile" class="btn btn-outline-danger w-100 mt-2">Logout</button>
-                        </li>
-                    </ul>
+            <div>
+                <button id="profileBtnMobile" class="btn btn-outline-secondary rounded-circle m-2 p-0"
+                    style="width: 40px; height: 40px;">
+                    <img id="profileAvatarMobile" src="./images/default-avatar.avif" alt="Profile"
+                        class="rounded-circle" style="width: 100%; height: 100%; object-fit: cover;">
+                </button>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                    aria-labelledby="offcanvasNavbarLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">DietBuddy</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="./home.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./calculator.html">Calorie Counter</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./mealPlanner.html">Mealplanner</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./social.html">Social</a>
+                            </li>
+                            <li class="nav-item">
+                                <button id="logoutButtonMobile"
+                                    class="btn btn-outline-danger w-100 mt-2">Logout</button>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -83,7 +93,11 @@
                         <a class="nav-link" href="./social.html">Social</a>
                     </li>
                 </ul>
-                <p id="navGreeting" class="mb-0 mx-2"></p>
+                <button id="profileBtnDesktop" class="btn btn-outline-secondary rounded-circle m-2 p-0"
+                    style="width: 40px; height: 40px;">
+                    <img id="profileAvatarDesktop" src="./images/default-avatar.avif" alt="Profile"
+                        class="rounded-circle" style="width: 100%; height: 100%; object-fit: cover;">
+                </button>
                 <button id="logoutButtonDesktop" class="btn btn-outline-danger">Logout</button>
             </div>
         </div>
@@ -154,10 +168,52 @@
     <section id="plan" class="d-lg-flex justify-content-center gap-4 pb-5"></section>
     <section id="nutrients"></section>
 
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <form id="profileForm">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="profileModalLabel">Edit Profile</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="mb-3 text-center">
+                            <label for="profileImage" class="form-label">Profile Photo</label>
+                            <div>
+                                <div class="d-flex flex-column justify-content-center align-items-center">
+                                    <img id="modalAvatar" src="./images/default-avatar.avif" class="rounded-circle mb-2"
+                                        style="width: 100px; height: 100px; object-fit: cover;">
+                                    <button type="button" id="removePhotoBtn"
+                                        class="btn btn-sm btn-outline-danger mt-2">
+                                        Remove Photo
+                                    </button>
+                                </div>
+                                <input type="file" id="profileImage" accept="image/*" class="form-control mt-2">
+                            </div>
+
+                        </div>
+                        <div class="mb-3">
+                            <label for="profileName" class="form-label">Name</label>
+                            <input type="text" id="profileName" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="calorieIntake" class="form-label">Daily Caloric Intake</label>
+                            <p id="calorieDisplay">2500</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script type="module" src="./scripts/firebaseAPI_BBY10.js"></script>
     <script type="module" src="./scripts/authCheck.js"></script>
     <script type="module" src="./scripts/mealPlanner.js"></script>
     <script type="module" src="./scripts/logout.js"></script>
+    <script type="module" src="./scripts/profile.js"></script>
 </body>
 
 </html>
