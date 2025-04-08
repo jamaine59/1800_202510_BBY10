@@ -65,12 +65,40 @@ document.addEventListener("DOMContentLoaded", () => {
             { merge: true }
           );
 
+        //this is to close the modal after submission
+        const modal = bootstrap.Modal.getInstance(
+          document.getElementById("mealModal")
+        );
+        modal?.hide();
+
         Swal.fire("Post submitted!");
 
         mealForm.reset();
         document.getElementById("imgPlacholder").src = "";
         ImageFile = null;
         ImageString = "";
+
+        //this block is responsible for displaying the new post in feed -- no refresh needed
+        const userDoc = await db.collection("users").doc(user.uid).get();
+        const userName = userDoc.exists ? userDoc.data().name : "Unknown User";
+
+        const postsContainer = document.getElementById("postsContainer");
+
+        if (postsContainer) {
+          const newCard = document.createElement("div");
+          newCard.classList.add("post-card");
+          newCard.innerHTML = `
+          <div class="card card-social-feed" style="width: 18rem;">
+            <h4 style="padding-left:1rem; padding-top: 1rem;">@${userName}</h4>
+            <img src="data:image/png;base64,${postData.imageUrl}" class="card-img-top feed-img" alt="${postData.name}">
+            <div class="card-body">
+              <h5 class="card-title">${postData.name}</h5>
+              <p class="card-text">${postData.description}</p>
+            </div>
+          </div>`;
+
+          postsContainer.prepend(newCard);
+        }
       } catch (err) {
         console.error("Error posting meal:", err);
         Swal.fire("Something went wrong.");
