@@ -9,10 +9,22 @@ auth.onAuthStateChanged(async (user) => {
   try {
     const doc = await db.collection("users").doc(user.uid).get();
     const mealPlan = doc.exists ? doc.data().mealPlan?.data : null;
+    const savedPosts = doc.exists ? doc.data().myposts : null;
+
+    const postDataArray = [];
+
+    for (const postId of savedPosts) {
+      const postDoc = await db.collection("posts").doc(postId).get();
+      if (postDoc.exists) {
+        postDataArray.push({ id: postDoc.id, ...postDoc.data() });
+      }
+    }
+
     document.getElementById("userGreeting").innerHTML = `Hello, ${
       doc.data().name
     }!`;
     renderSavedMealPlan(mealPlan);
+    renderSavedPosts(postDataArray);
   } catch (err) {
     console.error("Error loading saved meal plan:", err);
   }
@@ -69,5 +81,67 @@ function renderSavedMealPlan(mealPlan) {
   if (mealPlan.week) {
     container.innerHTML = `<p>You have a weekly plan generated. Go to <a href="mealPlanner.html">Meal Planner</a> to view it in detail.</p>`;
     return;
+  }
+}
+
+function renderSavedPosts(postDataArray) {
+  const container = document.getElementById("savedPosts");
+  container.innerHTML = "";
+
+  if (!postDataArray) {
+    container.innerHTML = "<p style='color: white;'>No saved posts found.</p>";
+    return;
+  }
+
+  if (postDataArray) {
+    container.innerHTML = postDataArray
+      .map(
+        (post) => `
+      <div class="card card-social-feed" style="width: 18rem;" data-post-id="${post.id}">
+        <img src="data:image/png;base64,${post.imageUrl}" class="card-img-top feed-img" alt=${post.name}>
+        <div class="card-body">
+          <h5 class="card-title">${post.name}</h5>
+          <p class="card-text">${post.description}</p>
+        </div>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-danger mt-2 mb-4 w-50 align-self-center removePostBtn"
+          data-id="${post.id}">
+          Remove Post
+        </button>
+      </div>`
+      )
+      .join("");
+
+    //removing post
+    const removeBtns = container.querySelectorAll(".removePostBtn");
+    removeBtns.forEach((btn) => {
+      btn.addEventListener("click", async () => {
+        const confirmDelete = confirm(
+          "Are you sure you want to delete this post?"
+        );
+        if (!confirmDelete) return;
+
+        const postId = btn.getAttribute("data-id");
+        const user = auth.currentUser;
+
+        try {
+          await db.collection("posts").doc(postId).delete();
+
+          await db
+            .collection("users")
+            .doc(user.uid)
+            .update({
+              myposts: firebase.firestore.FieldValue.arrayRemove(postId),
+            });
+
+          //removing the card  element
+          btn.closest(".card").remove();
+        } catch (err) {
+          console.error("Error deleting post:", err);
+          alert("Something went wrong deleting the post.");
+        }
+      });
+    });
   }
 }
