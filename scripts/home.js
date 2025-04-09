@@ -101,7 +101,7 @@ function renderSavedPosts(postDataArray) {
     container.innerHTML = postDataArray
       .map(
         (post) => `
-      <div class="card card-social-feed" style="width: 18rem;" data-post-id="${post.id}">
+      <div class="card card-social-feed" style="width: 15rem;" data-post-id="${post.id}">
         <img src="data:image/png;base64,${post.imageUrl}" class="card-img-top feed-img" alt=${post.name}>
         <div class="card-body">
           <h5 class="card-title">${post.name}</h5>
