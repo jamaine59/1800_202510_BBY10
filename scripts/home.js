@@ -43,15 +43,19 @@ function renderSavedMealPlan(mealPlan) {
     const mealsHTML = mealPlan.meals
       .map(
         (meal) => `
-        <div class="card" style="width: 12rem;">
-          <img src="https://spoonacular.com/recipeImages/${meal.id}-556x370.jpg" class="card-img-top" alt="${meal.title}">
-          <div class="card-body">
-            <h5 class="card-title">${meal.title}</h5>
-            <p class="card-text"><strong>Ready in:</strong> ${meal.readyInMinutes} minutes</p>
-            <a href="${meal.sourceUrl}" class="btn btn-primary">View Recipe</a>
+        <div class="card home-meal-card" style="width: 12rem; height: 23rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <img src="https://spoonacular.com/recipeImages/${meal.id}-556x370.jpg" class="card-img-top meal-img" alt="${meal.title} "style="height: 150px; object-fit: cover; width: 100%;">
+
+          <div class="card-body" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <h5 class="card-title">${meal.title}</h5>
+              <p class="card-text">
+                <strong>Ready in:</strong> ${meal.readyInMinutes} minutes
+              </p>
+            </div>
+            <a href="${meal.sourceUrl}" class="btn btn-primary mt-2">View Recipe</a>
           </div>
-        </div>
-      `
+        </div>`
       )
       .join("");
 

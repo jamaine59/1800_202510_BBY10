@@ -110,7 +110,6 @@ body {
 
   .card-body {
     justify-content: space-around;
-    /* align-items: center; */
     display: flex;
     flex-direction: column;
   }

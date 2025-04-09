@@ -1,5 +1,4 @@
 body {
-  /* height: calc(100vh + 4.5rem); */
   height: 100vh;
   background-color: #1b2f33;
 }
@@ -19,16 +18,15 @@ body.auth-checking {
   width: 4rem;
 }
 
-/* Custom styles for Nav Tabs */
 .nav-tabs .nav-link {
   font-weight: bold;
   color: white;
 }
 
 .nav-tabs .nav-link.active {
-  background-color: #79b791; /* Green background for active tab */
+  background-color: #79b791;
   color: white;
-  border-color: #79b791; /* Border color for active tab */
+  border-color: #79b791;
 }
 
 .card {
